@@ -1,4 +1,4 @@
-import { date, number, string } from "joi";
+import { string } from "joi";
 import * as mongoose from "mongoose";
 
 export const CustomerSchema = new mongoose.Schema({
