@@ -25,13 +25,14 @@ export class CustomerController {
          }
    }
 
-  @Get('/:customerId')
-    async getCustomerById( @Param() param : customerParamDto ) {
+  @Get("/:id")
+    async getCustomerById( @Param() param : customerParamDto , @Res() res : Response) {
       return await this.customerService.getCustomer(param.customerID) ;
+        // return res.status(HttpStatus.OK).send(customerData);
   }
 
-  @Delete('/')
-  async deleteCustomerById( @Query('customerid') id : string ) {
+  @Delete('/id')
+  async deleteCustomerById( @Query("id") id : string ) {
      return await this.customerService.removeCustomer(id) ;
   }
 
